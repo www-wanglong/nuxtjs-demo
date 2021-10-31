@@ -1,22 +1,20 @@
 <template>
   <div>
-    <h1>Hello Nuxt.js {{ title }}</h1>
+    <h1>article page</h1>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-
 export default {
-  name: 'HomePage',
-
-  async asyncData () {
-    // 没有　this
+  name: 'ArticlePage',
+  async asyncData (context) {
+    console.log(context.params)
     const { data } = await axios({
-      method: 'GET',
+      methdo: 'GET',
       url: 'http://localhost:3000/data.json'
+
     })
-    return data
   }
 }
 </script>
